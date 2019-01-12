@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import os.path
-import time
 import sys
 from ConfigParser import SafeConfigParser
 from selenium.webdriver.chrome.options import Options
@@ -30,8 +28,7 @@ class StravaKudos:
       sys.exit(1)
 
     os.environ["webdriver.chrome.driver"] = chromedriver
-    self.driver = webdriver.Chrome(chrome_options=options, executable_path=r'/home/runner/work/chromedriver')
-
+    self.driver = webdriver.Chrome(chrome_options=options, executable_path=chromedriver)
 
   def login(self):
     login = self.config.get(STRAVA, 'email')  

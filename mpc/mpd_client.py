@@ -33,7 +33,7 @@ def num(s):
 def main():
   args = sys.argv[1:]
   if not args:
-    print "usage: {start|stop|status} [--url url] [--ip ip] [--port port]";
+    print "usage: {start|stop|status} [--url url] [--ip ip] [--port port] [--radio radio]";
     sys.exit(1)
 
   start = False
@@ -63,6 +63,12 @@ def main():
   if args and args[0] == '--port':
     port = num(args[1])
     del args[0:2]
+  
+  if args and args[0] == '--radio':
+    radio = num(args[1])
+    del args[0:2]
+    if radio == 2:
+      url = ''
   
   if status:
     print_status(ip, port)
