@@ -40,7 +40,7 @@ class StravaKudos:
       sys.exit(1)
 
     password = self.config.get(STRAVA, 'password')  
-    if not login:
+    if not password:
       print 'Please provide your strava password in strava.config file'
       sys.exit(1)
 
